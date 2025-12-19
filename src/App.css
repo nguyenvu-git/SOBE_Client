@@ -1,0 +1,28 @@
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 12px 0;
+}
+
+.marquee-track {
+  display: inline-flex;
+  gap: 40px; /* khoảng cách giữa các ảnh */
+  animation: marquee 15s linear infinite;
+}
+
+.marquee-track img {
+  height: 330px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Animation */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
