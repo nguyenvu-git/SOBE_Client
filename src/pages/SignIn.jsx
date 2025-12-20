@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-const SignIn = () => {
+const SignIn = ({ setUserr }) => {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -27,10 +27,22 @@ const SignIn = () => {
       console.log(data);
       if (data.success) {
         // lưu user
-        localStorage.setItem("user", JSON.stringify(data.user));
+        // localStorage.setItem("user", JSON.stringify(data.user));
+        localStorage.setItem("auth", JSON.stringify(data.user));
+        setUserr(data.user);
         // chuyển sang trang chủ
         // window.location.href = "/";
-        navigate("/");
+        if (data.success) {
+          localStorage.setItem("auth", JSON.stringify(data.user));
+
+          if (data.user.role === "admin") {
+            navigate("/admin");
+          } else {
+            navigate("/");
+          }
+        }
+
+        // navigate("/");
       } else {
         alert(data.message || "Sai tài khoản hoặc mật khẩu");
       }

@@ -9,10 +9,10 @@ const HomePage = () => {
   const [category, setCategory] = useState([]);
   const [activeId, setActiveId] = useState(null);
   const [products, setProducts] = useState([]);
-  const user = JSON.parse(localStorage.getItem("user"));
-  if (!user) {
-    return <Navigate to="/login" />;
-  }
+  // const user = JSON.parse(localStorage.getItem("user"));
+  // if (!user) {
+  //   return <Navigate to="/login" />;
+  // }
 
   useEffect(() => {
     const fetchCategory = async () => {
