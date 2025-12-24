@@ -96,7 +96,10 @@ const Shop = () => {
             <div className="w-[26%] border rounded-[20px]" key={item.id}>
               <Link to={`/product/${item.id}`}>
                 <img
-                  src={"http://localhost:8088/ecomer/" + item.image}
+                  src={
+                    // "http://localhost:8088/ecomer/" +
+                    item.image
+                  }
                   alt=""
                   className="w-full h-[325px] rounded-t-[20px] object-cover"
                 />

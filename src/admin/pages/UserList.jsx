@@ -19,11 +19,11 @@ const UserList = () => {
   );
 
   return (
-    <div className="w-full flex">
-      <div className="w-[20%]">
+    <div className="">
+      {/* <div className="w-[20%]">
         <Sidebar></Sidebar>
-      </div>
-      <div className="w-[70%] mt-4">
+      </div> */}
+      <div className="w-[90%] mt-4">
         <h1 className="text-2xl font-bold mb-6">Quản lý người dùng</h1>
 
         <UserFilter keyword={keyword} setKeyword={setKeyword} />

@@ -42,16 +42,16 @@ const CategoryList = () => {
     fetchCategories();
   };
   return (
-    <div className="w-full flex h-screen">
-      <div className="w-[20%] h-screen">
+    <div className="">
+      {/* <div className="w-[20%] h-screen">
         <Sidebar></Sidebar>
-      </div>
-      <div className="w-[70%]">
+      </div> */}
+      <div className="w-[90%]">
         <div className="flex justify-between mb-6 mt-6">
           <h1 className="text-2xl font-bold">Quản lý danh mục</h1>
           <button
             onClick={handleAdd}
-            className="bg-blue-600 text-white px-4 py-2 rounded-lg"
+            className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 cursor-pointer"
           >
             + Thêm danh mục
           </button>

@@ -76,7 +76,7 @@ const ProductDetail = () => {
       <div className="w-[80%] mx-auto mt-40 mb-40">
         <div className="flex gap-10">
           <img
-            src={"http://localhost:8088/ecomer/" + product.image}
+            src={product.image}
             className="w-[400px] h-[400px] object-cover rounded"
           />
           <div className="w-full">
@@ -142,7 +142,7 @@ const ProductDetail = () => {
                   <p className="mb-3 text-[14px] text-[#666]">03</p>
                   <p className="mb-3 text-[14px] text-[#666]">Green</p>
                   <p className="mb-3 text-[14px] text-[#666]">Organic</p>
-                  <p className="mb-3 text-[14px] text-[#666]">Vegetables</p>  
+                  <p className="mb-3 text-[14px] text-[#666]">Vegetables</p>
                   <p className="mb-3 text-[14px] text-[#666]">
                     Available (5,413)
                   </p>
@@ -182,7 +182,7 @@ const ProductDetail = () => {
               <div className="w-[24%] border rounded-[20px]" key={item.id}>
                 <Link to={`/product/${item.id}`}>
                   <img
-                    src={"http://localhost:8088/ecomer/" + item.image}
+                    src={item.image}
                     alt=""
                     className="w-full h-[325px] rounded-t-[20px] object-cover"
                   />

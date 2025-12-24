@@ -15,7 +15,10 @@ import ProtectedRoute from "./router/ProtectedRoute";
 import { useEffect, useState } from "react";
 import UserList from "./admin/pages/UserList";
 import CategoryList from "./admin/pages/CategoryList";
-
+import AdminProducts from "./admin/components/AdminProducts";
+import Orders from "./admin/pages/Order";
+import OrderDetails from "./pages/OrderDetails";
+import MyOrders from "./pages/MyOrder";
 function App() {
   // const [user, setUser] = useState(null);
 
@@ -51,6 +54,8 @@ function App() {
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/buy" element={<Buy />} />
           <Route path="/store" element={<Store />} />
+          <Route path="/my-orders" element={<MyOrders />} />
+          <Route path="/orders/:id" element={<OrderDetails />} />
         </Route>
         {/* <Route
           path="/"
@@ -62,13 +67,21 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/store" element={<Store />} /> */}
 
-        <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
+        {/* <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
           <Route path="/admin/*" element={<AdminLayout />} />
           <Route path="admin/users" element={<UserList></UserList>}></Route>
           <Route
             path="admin/category"
             element={<CategoryList></CategoryList>}
           ></Route>
+        </Route> */}
+        <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route path="users" element={<UserList />} />
+            <Route path="category" element={<CategoryList />} />
+            <Route path="products" element={<AdminProducts />} />
+            <Route path="orders" element={<Orders />} />
+          </Route>
         </Route>
       </Routes>
 

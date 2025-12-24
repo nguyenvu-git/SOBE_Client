@@ -20,13 +20,13 @@ const CategoryTable = ({ categories, onEdit, onDelete }) => {
               <td className="p-3 text-center space-x-2">
                 <button
                   onClick={() => onEdit(cat)}
-                  className="text-blue-600 hover:underline"
+                  className="px-3 py-1 rounded bg-yellow-400 hover:bg-yellow-500 cursor-pointer text-white"
                 >
                   Sửa
                 </button>
                 <button
                   onClick={() => onDelete(cat.id)}
-                  className="text-red-600 hover:underline"
+                  className="px-3 py-1 rounded bg-red-500 hover:bg-red-600 text-white cursor-pointer"
                 >
                   Xóa
                 </button>

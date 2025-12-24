@@ -52,6 +52,13 @@ export default function Header() {
             >
               Store
             </NavLink>
+
+            <NavLink
+              className="text-xl text-white font-semibold hover:text-gray-100"
+              to="/my-orders"
+            >
+              My Orders
+            </NavLink>
           </div>
 
           <div className="w-[40%] ml-10 flex">

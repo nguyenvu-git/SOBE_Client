@@ -9,7 +9,7 @@ const Buy = () => {
     useCart();
   const { createOrder, addItem, orderId } = useOrder();
 
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(localStorage.getItem("auth"));
 
   const total = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
 
@@ -70,7 +70,8 @@ const Buy = () => {
                         <div className="flex  items-center gap-3">
                           <img
                             src={
-                              "http://localhost:8088/ecomer/" + product.image
+                              // "http://localhost:8088/ecomer/uploads" +
+                              product.image
                             }
                             className="w-24 h-24 rounded"
                           />
