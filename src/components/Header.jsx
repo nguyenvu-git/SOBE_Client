@@ -9,20 +9,29 @@ export default function Header() {
   const { cartItems, removeFromCart, totalProducts } = useCart();
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
-
+  const handleLogout = () => {
+    localStorage.removeItem("auth");
+    navigate("/login");
+  };
   return (
     <>
-      <div className="py-6 bg-[#718D6D] sm:block fixed top-0 left-0 w-full hidden z-100">
+      <div className="py-6 bg-[#333] sm:block fixed top-0 left-0 w-full hidden z-100">
         <div className="flex justify-between px-8 text-[14px] text-gray-800 pb-1">
           <div className=""></div>
-          <div className="flex gap-2 font-medium">
-            <Link to={"/login"}>
+          <div className="flex gap-2 font-medium text-[#999]">
+            {/* <Link to={"/login"}>
               <p className="cursor-pointer">Sign In</p>
             </Link>
             <p className="">/</p>
             <Link to={"/signup"}>
               <p className="cursor-pointer">Sign Up</p>
-            </Link>
+            </Link> */}
+            <p
+              className="cursor-pointer hover:text-white"
+              onClick={handleLogout}
+            >
+              Logout
+            </p>
           </div>
         </div>
         <div className="w-[80%] mx-auto flex items-center">
@@ -31,31 +40,78 @@ export default function Header() {
             <img src="\logo.svg" alt="" className="w-[64px] h-[64px]" />
           </div>
 
-          <div className="ml-20 flex gap-9">
+          {/* <div className="ml-20 flex gap-9">
             <NavLink
-              className={"text-xl text-white font-semibold hover:text-gray-100"}
+              className={"text-xl text-[#999] font-semibold hover:text-gray-100"}
+              
               to={"/"}
             >
               Home
             </NavLink>
 
             <NavLink
-              className={"text-xl text-white font-semibold hover:text-gray-100"}
+              className={"text-xl text-[#999] font-semibold hover:text-gray-100"}
               to={"/shop"}
             >
               Shop
             </NavLink>
 
             <NavLink
-              className={"text-xl text-white font-semibold hover:text-gray-100"}
+              className={"text-xl text-[#999] font-semibold hover:text-gray-100"}
               to={"/store"}
             >
               Store
             </NavLink>
 
             <NavLink
-              className="text-xl text-white font-semibold hover:text-gray-100"
+              className="text-xl text-[#999] font-semibold hover:text-gray-100"
               to="/my-orders"
+            >
+              My Orders
+            </NavLink>
+          </div> */}
+
+          <div className="ml-20 flex gap-9">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `text-xl font-semibold hover:text-gray-100 ${
+                  isActive ? "text-white" : "text-[#999]"
+                }`
+              }
+            >
+              Home
+            </NavLink>
+
+            <NavLink
+              to="/shop"
+              className={({ isActive }) =>
+                `text-xl font-semibold hover:text-gray-100 ${
+                  isActive ? "text-white" : "text-[#999]"
+                }`
+              }
+            >
+              Shop
+            </NavLink>
+
+            <NavLink
+              to="/store"
+              className={({ isActive }) =>
+                `text-xl font-semibold hover:text-gray-100 ${
+                  isActive ? "text-white" : "text-[#999]"
+                }`
+              }
+            >
+              Store
+            </NavLink>
+
+            <NavLink
+              to="/my-orders"
+              className={({ isActive }) =>
+                `text-xl font-semibold hover:text-gray-100 ${
+                  isActive ? "text-white" : "text-[#999]"
+                }`
+              }
             >
               My Orders
             </NavLink>
@@ -141,10 +197,10 @@ export default function Header() {
             onClick={() => setOpenCart(!openCart)}
             className="flex justify-end w-[14%] relative"
           >
-            <div className="absolute -right-3 -top-3 rounded-full px-2 py-1 bg-gray-600 text-white text-[12px]">
+            <div className="absolute -right-3 -top-3 rounded-full px-2 py-1 bg-[#00B207] text-white text-[12px]">
               {totalProducts}
             </div>
-            <img className="cursor-pointer" src="\cart.svg" alt="" />
+            <img className="cursor-pointer" src="\iconcart.svg" alt="" />
           </div>
         </div>
       </div>

@@ -142,25 +142,24 @@ export default function Orders() {
         </select>
       </div>
 
-      {/* ===== TABLE ===== */}
       <table className="w-full bg-white rounded-xl overflow-hidden shadow">
         <thead className="bg-gray-100">
           <tr className="text-center">
-            <th>ID</th>
-            <th>User</th>
-            <th>Trạng thái</th>
-            <th>Hành động</th>
+            <th className="py-2">ID</th>
+            <th className="py-2">User</th>
+            <th className="py-2">Trạng thái</th>
+            <th className="py-2">Hành động</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="">
           {filteredOrders.map((o) => (
             <tr key={o.id} className="border-b text-center">
-              <td>{o.id}</td>
-              <td>{o.user_id}</td>
-              <td>
+              <td className="py-2">{o.id}</td>
+              <td className="py-2">{o.user_id}</td>
+              <td className="py-2">
                 <OrderStatusBadge status={o.status} />
               </td>
-              <td className="space-x-2">
+              <td className="space-x-2 py-2">
                 <button
                   className="text-blue-600 hover:underline"
                   onClick={() => fetchOrderDetail(o.id)}
@@ -169,7 +168,7 @@ export default function Orders() {
                 </button>
 
                 <select
-                  className="border rounded px-2 py-1"
+                  className="border rounded px-2 py-0.5"
                   defaultValue={o.status}
                   onChange={(e) => handleUpdateStatus(o.id, e.target.value)}
                 >

@@ -75,7 +75,7 @@ const HomePage = () => {
           </div>
 
           <Link to={"/shop"}>
-            <button className="font-medium text-white bg-[#718D6D] hover:bg-[#254C22] px-7 py-4 rounded-[50px] mt-8 cursor-pointer">
+            <button className="font-medium text-white bg-[#00B207] hover:bg-[#254C22] px-7 py-4 rounded-[50px] mt-8 cursor-pointer">
               Start Shopping
             </button>
           </Link>
@@ -157,8 +157,8 @@ const HomePage = () => {
 
         <div className="mt-12 w-full">
           <div className="flex gap-10 flex-wrap justify-center">
-            {filteredProducts.map((item) => (
-              <div className="w-[26%] border rounded-[20px]" key={item.id}>
+            {filteredProducts.slice(0,6).map((item) => (
+              <div className="w-[26%] rounded-[20px]" key={item.id}>
                 <Link to={`/product/${item.id}`}>
                   <img
                     src={

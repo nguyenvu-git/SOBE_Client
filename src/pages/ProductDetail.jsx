@@ -102,7 +102,7 @@ const ProductDetail = () => {
             <p className="mt-4 text-gray-600">{product.description}</p>
             <button
               onClick={() => addToCart(product)}
-              className="tex-center w-full bg-[#718D6D] hover:bg-[#254C22] py-3 cursor-pointer font-semibold rounded-4xl text-white mt-10"
+              className="tex-center w-full bg-[#2C742F] hover:bg-[#254C22] py-3 cursor-pointer font-semibold rounded-4xl text-white mt-20"
             >
               Add To Card
             </button>
@@ -179,7 +179,7 @@ const ProductDetail = () => {
           </p>
           <div className="flex flex-wrap gap-4 w-full mt-8">
             {products.slice(0, 4).map((item) => (
-              <div className="w-[24%] border rounded-[20px]" key={item.id}>
+              <div className="w-[24%] rounded-[20px]" key={item.id}>
                 <Link to={`/product/${item.id}`}>
                   <img
                     src={item.image}

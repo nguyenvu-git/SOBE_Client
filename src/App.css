@@ -1,23 +1,26 @@
 .marquee-container {
+  display: flex;
   overflow: hidden;
-  white-space: nowrap;
-  padding: 12px 0;
+  background-color: #00B207; /* xanh đậm giống banner */
+  color: #fff;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 .marquee-track {
+  display: flex;
+  gap: 60px;
+  white-space: nowrap;
+  animation: marquee 18s linear infinite;
+}
+
+.marquee-track span {
   display: inline-flex;
-  gap: 40px; /* khoảng cách giữa các ảnh */
-  animation: marquee 15s linear infinite;
+  align-items: center;
 }
 
-.marquee-track img {
-  height: 330px;
-  width: auto;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-/* Animation */
+/* Animation chữ chạy */
 @keyframes marquee {
   from {
     transform: translateX(0);

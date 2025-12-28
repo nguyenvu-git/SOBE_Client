@@ -93,7 +93,7 @@ const Shop = () => {
 
         <div className="flex flex-wrap gap-6 justify-center mt-6">
           {product.map((item) => (
-            <div className="w-[26%] border rounded-[20px]" key={item.id}>
+            <div className="w-[26%] rounded-[20px]" key={item.id}>
               <Link to={`/product/${item.id}`}>
                 <img
                   src={
