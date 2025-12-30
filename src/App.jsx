@@ -20,13 +20,6 @@ import Orders from "./admin/pages/Order";
 import OrderDetails from "./pages/OrderDetails";
 import MyOrders from "./pages/MyOrder";
 function App() {
-  // const [user, setUser] = useState(null);
-
-  // useEffect(() => {
-  //   const auth = localStorage.getItem("auth");
-  //   setUser(auth ? JSON.parse(auth) : null);
-  // }, []);
-
   const [user, setUser] = useState(() => {
     const auth = localStorage.getItem("auth");
     return auth ? JSON.parse(auth) : null;
@@ -37,13 +30,6 @@ function App() {
       {user?.role === "customer" && <Header />}
 
       <Routes>
-        {/* <Route
-          path="/login"
-          element={
-            user ? <Navigate to="/" replace /> : <SignIn setUserr={setUser} />
-          }
-        /> */}
-
         <Route path="/login" element={<SignIn setUserr={setUser} />} />
 
         <Route path="/signup" element={<SignUp />} />
@@ -57,24 +43,7 @@ function App() {
           <Route path="/my-orders" element={<MyOrders />} />
           <Route path="/orders/:id" element={<OrderDetails />} />
         </Route>
-        {/* <Route
-          path="/"
-          element={user ? <HomePage /> : <Navigate to="/login" replace />}
-        />
-
-        <Route path="/buy" element={<Buy />} />
-        <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/store" element={<Store />} /> */}
-
-        {/* <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
-          <Route path="/admin/*" element={<AdminLayout />} />
-          <Route path="admin/users" element={<UserList></UserList>}></Route>
-          <Route
-            path="admin/category"
-            element={<CategoryList></CategoryList>}
-          ></Route>
-        </Route> */}
+        
         <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="users" element={<UserList />} />

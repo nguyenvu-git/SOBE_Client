@@ -1,7 +1,7 @@
 .marquee-container {
   display: flex;
   overflow: hidden;
-  background-color: #00B207; /* xanh đậm giống banner */
+  background-color: #00B207;
   color: #fff;
   padding: 10px 0;
   font-weight: 600;
@@ -20,7 +20,6 @@
   align-items: center;
 }
 
-/* Animation chữ chạy */
 @keyframes marquee {
   from {
     transform: translateX(0);

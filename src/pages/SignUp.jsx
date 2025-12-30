@@ -26,10 +26,7 @@ const SignUp = () => {
       );
       const data = await res.json();
       if (data.success) {
-        // lưu user
-        // localStorage.setItem("user", JSON.stringify(data.user));
         alert("Đăng ký thành công, vui lòng đăng nhập");
-        // chuyển sang trang chủ
         navigate("/login");
       } else {
         alert(data.message || "Sai");
@@ -41,7 +38,6 @@ const SignUp = () => {
   return (
     <>
       <div className="min-h-screen w-full bg-white relative">
-        {/* Teal Glow Background */}
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -51,7 +47,6 @@ const SignUp = () => {
             backgroundSize: "100% 100%",
           }}
         />
-        {/* Your Content/Components */}
         <div className="mx-auto flex items-center flex-col justify-center h-screen relative z-10">
           <h1 className="sm:text-4xl text-2xl font-bold text-[#00B207]">
             ĐĂNG KÝ TÀI KHOẢN

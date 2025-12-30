@@ -33,9 +33,11 @@ const ProductDetail = () => {
   const [products, setProducts] = useState([]);
   const [changreTab, setChangreTap] = useState(false);
   const { addToCart } = useCart();
+  
   const handleChargeTab = () => {
     setChangreTap(true);
   };
+
   const handleBackTab = () => {
     setChangreTap(false);
   };

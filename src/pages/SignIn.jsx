@@ -26,12 +26,8 @@ const SignIn = ({ setUserr }) => {
       const data = await res.json();
       console.log(data);
       if (data.success) {
-        // lưu user
-        // localStorage.setItem("user", JSON.stringify(data.user));
         localStorage.setItem("auth", JSON.stringify(data.user));
         setUserr(data.user);
-        // chuyển sang trang chủ
-        // window.location.href = "/";
         if (data.success) {
           localStorage.setItem("auth", JSON.stringify(data.user));
 
@@ -41,8 +37,6 @@ const SignIn = ({ setUserr }) => {
             navigate("/");
           }
         }
-
-        // navigate("/");
       } else {
         alert(data.message || "Sai tài khoản hoặc mật khẩu");
       }
@@ -53,7 +47,6 @@ const SignIn = ({ setUserr }) => {
   };
   return (
     <div className="min-h-screen w-full bg-white relative">
-      {/* Teal Glow Background */}
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -63,7 +56,6 @@ const SignIn = ({ setUserr }) => {
           backgroundSize: "100% 100%",
         }}
       />
-      {/* Your Content/Components */}
 
       <div className="mx-auto flex items-center flex-col justify-center h-screen relative z-10">
         <h1 className="sm:text-4xl text-2xl font-bold text-[#00B207]">

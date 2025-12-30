@@ -73,7 +73,7 @@ const Buy = () => {
                               // "http://localhost:8088/ecomer/uploads" +
                               product.image
                             }
-                            className="w-24 h-24 rounded"
+                            className="w-24 h-24 rounded object-cover"
                           />
                           <p>{product.name}</p>
                         </div>

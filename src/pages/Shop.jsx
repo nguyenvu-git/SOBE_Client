@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { useLocation } from "react-router-dom";
 
-// import "src/App.css";
 const Shop = () => {
   const [product, setProduct] = useState([]);
   const [categoryId, setCategoryId] = useState("");
@@ -14,7 +13,6 @@ const Shop = () => {
   const { addToCart } = useCart();
   const [categories, setCategories] = useState([]);
 
-  //search
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const keyword = params.get("keyword") || "";
@@ -36,7 +34,6 @@ const Shop = () => {
       try {
         let url = "http://localhost:8088/ecomer/api/products?action=list";
 
-        // Nếu lọc theo category
         if (categoryId) {
           url += `&category_id=${categoryId}`;
         }
@@ -48,7 +45,6 @@ const Shop = () => {
         let data = await res.json();
         let products = data.data;
 
-        // Nếu lọc theo giá
         if (priceSort === "asc") {
           products = [...products].sort((a, b) => a.price - b.price);
         } else if (priceSort === "desc") {
@@ -70,7 +66,7 @@ const Shop = () => {
         <Banner></Banner>
         <div className="flex gap-4 mt-4">
           <select
-            className="border rounded-2xl p-2 px-4 font-medium"
+            className="border rounded-2xl p-2 px-4 font-medium cursor-pointer"
             onChange={(e) => setCategoryId(e.target.value)}
           >
             <option value="">Tất cả danh mục</option>
@@ -82,7 +78,7 @@ const Shop = () => {
           </select>
 
           <select
-            className="border rounded-2xl p-2 px-4 font-medium"
+            className="border rounded-2xl p-2 px-4 font-medium cursor-pointer"
             onChange={(e) => setPriceSort(e.target.value)}
           >
             <option value="">Giá (Mặc định)</option>

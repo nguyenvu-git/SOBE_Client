@@ -137,7 +137,6 @@ export default function Header() {
             /> */}
           </div>
 
-          {/* Overlay mờ phía sau */}
           {openCart && (
             <div
               onClick={() => setOpenCart(false)}
@@ -145,9 +144,8 @@ export default function Header() {
             ></div>
           )}
 
-          {/* Panel giỏ hàng trượt từ phải */}
           <div
-            className={`fixed top-0 right-0 h-full w-[28%] bg-white z-50 shadow-lg transform transition-transform duration-300 
+            className={`fixed top-0 right-0 h-full w-[28%] bg-white z-50 shadow-lg transform transition-transform duration-300 rounded-l-xl
   ${openCart ? "translate-x-0" : "translate-x-full"}`}
           >
             <div className="p-5 flex justify-between items-center border-b">
@@ -167,7 +165,7 @@ export default function Header() {
                     className="flex gap-3 items-center border-b pb-3"
                   >
                     <img
-                      src={"http://localhost:8088/ecomer/" + item.image}
+                      src={item.image}
                       className="w-[60px] h-[60px] rounded object-cover"
                     />
                     <div className="flex-1">
@@ -176,18 +174,24 @@ export default function Header() {
                         {item.price} x {item.qty}
                       </p>
                     </div>
-                    <button
+                    {/* <button
                       onClick={() => removeFromCart(item.id)}
                       className="text-red-500 text-sm"
                     >
                       Xóa
-                    </button>
+                    </button> */}
+                    <img
+                      onClick={() => removeFromCart(item.id)}
+                      className="cursor-pointer"
+                      src="\cclose.svg"
+                      alt=""
+                    />
                   </div>
                 ))
               )}
             </div>
             <Link to={"/buy"}>
-              <button className="w-[80%] rounded-[50px] flex h-[8%] font-medium flex-col items-center justify-center text-white mx-auto bg-[#718D6D] hover:bg-[#254C22]">
+              <button className="w-[80%] rounded-[50px] flex h-[8%] font-medium flex-col items-center justify-center text-white mx-auto bg-[#00B207] hover:bg-[#254C22] cursor-pointer">
                 Check out
               </button>
             </Link>

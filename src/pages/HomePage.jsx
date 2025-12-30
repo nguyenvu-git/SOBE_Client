@@ -125,9 +125,11 @@ const HomePage = () => {
                 Introducing our stylish and versatile sheer clergy caped bomber
                 jacket
               </p>
-              <button className="py-[12px] w-[70%] mt-6 border rounded-[54px] mb-5">
-                Shop now
-              </button>
+             <Link to={"/shop"}>
+                <button className="py-[12px] w-[70%] mt-6 border rounded-[54px] mb-5">
+                  Shop now
+                </button>
+             </Link>
             </div>
           </div>
         </div>
@@ -177,9 +179,9 @@ const HomePage = () => {
                   <div className="">
                     <img
                       onClick={() => addToCart(item)}
-                      src="\shopping.svg"
+                      src="\Bag.svg"
                       alt=""
-                      className="cursor-pointer"
+                      className="cursor-pointer w-10 h-10 bg-[#F2F2F2] rounded-full p-2 "
                     />
                   </div>
                 </div>
